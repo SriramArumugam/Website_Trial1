@@ -570,7 +570,7 @@ const products = [
 </style>
 
 
-    <!-- SECTION 4: Products -->
+    <!--  : Products -->
 <section
   id="products"
   class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16"
@@ -672,39 +672,229 @@ const products = [
   </div>
 </section>
 
-    <!-- SECTION 5: Impact -->
-    <section id="impact" class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16 " style="border-top: 1px solid var(--border-muted); padding-top: 64px;">
-    <div class="w-full">
-      <h2 class="text-2xl font-semibold sm:text-3xl" style="color: var(--font-primary);">Impact</h2>
+    <!-- SECTION 5: Impact (NEW Editorial Layout) -->
+<section
+  id="impact"
+  class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16"
+  style="border-top: 1px solid var(--border-muted); padding-top: 64px;"
+>
+  <div class="w-full grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+    <!-- LEFT ANCHOR PANEL -->
+    <div
+      class="rounded-2xl overflow-hidden"
+      style="background: var(--bg-secondary); border: 1px solid var(--border-primary);"
+    >
+      <div class="p-7 sm:p-8">
+        <h2 class="text-2xl font-semibold sm:text-3xl" style="color: var(--font-primary);">
+          Impact
+        </h2>
 
-      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <div class="rounded-xl p-5" style="border: 1px solid var(--border-primary); background: rgba(252,248,248,0.04);">
-          <div class="text-lg font-semibold" style="color: var(--font-primary);">Scalable</div>
-          <div class="mt-2 text-sm" style="color: var(--font-muted);">From one corridor to national coverage with consistent monitoring.</div>
-        </div>
+        <p class="mt-3 max-w-md" style="color: var(--font-muted);">
+          What continuous, satellite-based monitoring enables at scale.
+        </p>
+      </div>
 
-        <div class="rounded-xl p-5" style="border: 1px solid var(--border-primary); background: rgba(252,248,248,0.04);">
-          <div class="text-lg font-semibold" style="color: var(--font-primary);">Less CO₂ emissions</div>
-          <div class="mt-2 text-sm" style="color: var(--font-muted);">Reduced field vehicle surveys and operational footprint.</div>
-        </div>
+      <!-- Calm infrastructure vignette (SVG illustration) -->
+      <div class="relative h-56 sm:h-64">
+        <svg viewBox="0 0 900 420" class="absolute inset-0 h-full w-full">
+          <!-- background -->
+          <rect width="900" height="420" fill="#012028" />
 
-        <div class="rounded-xl p-5" style="border: 1px solid var(--border-primary); background: rgba(252,248,248,0.04);">
-          <div class="text-lg font-semibold" style="color: var(--font-primary);">Automated monitoring</div>
-          <div class="mt-2 text-sm" style="color: var(--font-muted);">Continuous updates instead of occasional measurements.</div>
-        </div>
+          <!-- distant haze -->
+          <path d="M0 140 C200 80, 700 80, 900 140 L900 420 L0 420 Z"
+                fill="rgba(252,248,248,0.04)"/>
 
-        <div class="rounded-xl p-5" style="border: 1px solid var(--border-primary); background: rgba(252,248,248,0.04);">
-          <div class="text-lg font-semibold" style="color: var(--font-primary);">Preventive maintenance</div>
-          <div class="mt-2 text-sm" style="color: var(--font-muted);">Intervene earlier instead of delayed repairs.</div>
-        </div>
+          <!-- corridor / road fading -->
+          <path d="M420 70 L330 420" stroke="rgba(252,248,248,0.12)" stroke-width="26" stroke-linecap="round"/>
+          <path d="M480 70 L570 420" stroke="rgba(252,248,248,0.12)" stroke-width="26" stroke-linecap="round"/>
 
-        <div class="rounded-xl p-5" style="border: 1px solid var(--border-primary); background: rgba(252,248,248,0.04);">
-          <div class="text-lg font-semibold" style="color: var(--font-primary);">Fewer major repairs</div>
-          <div class="mt-2 text-sm" style="color: var(--font-muted);">Better prioritization helps avoid expensive late-stage work.</div>
+          <!-- center dashed -->
+          <path d="M450 80 L450 420" stroke="rgba(252,248,248,0.10)" stroke-width="8"
+                stroke-dasharray="18 18" stroke-linecap="round"/>
+
+          <!-- subtle signal lines sweeping over corridor -->
+          <path d="M120 170 C260 120, 640 120, 780 170" fill="none"
+                stroke="rgba(0,86,23,0.35)" stroke-width="8" stroke-linecap="round"/>
+          <path d="M140 220 C280 170, 620 170, 760 220" fill="none"
+                stroke="rgba(0,86,23,0.25)" stroke-width="8" stroke-linecap="round"/>
+          <path d="M160 270 C300 220, 600 220, 740 270" fill="none"
+                stroke="rgba(0,86,23,0.18)" stroke-width="8" stroke-linecap="round"/>
+        </svg>
+
+        <!-- quote overlay -->
+        <div
+          class="absolute left-6 bottom-6 right-6 rounded-xl px-4 py-3"
+          style="border: 1px solid rgba(252,248,248,0.10); background: rgba(0,18,23,0.55);"
+        >
+          <div class="text-sm sm:text-base" style="color: rgba(252,248,248,0.90);">
+            “From reactive repairs to informed decisions.”
+          </div>
         </div>
       </div>
+    </div>
+
+    <!-- RIGHT METRICS COLUMN -->
+    <div class="space-y-4">
+      <!-- Metric 1 -->
+      <div class="impact-metric rounded-2xl p-6 sm:p-7"
+           style="background: var(--bg-secondary); border: 1px solid var(--border-primary);">
+        <div class="flex items-start gap-4">
+          <div class="impact-icon">
+            <!-- Network expanding icon -->
+            <svg viewBox="0 0 64 64" class="h-8 w-8">
+              <circle cx="18" cy="32" r="5" fill="rgba(252,248,248,0.55)"/>
+              <circle cx="46" cy="18" r="5" fill="rgba(252,248,248,0.35)"/>
+              <circle cx="46" cy="46" r="5" fill="rgba(252,248,248,0.35)"/>
+              <path d="M22 30 L41 20" stroke="rgba(0,86,23,0.55)" stroke-width="3" stroke-linecap="round"/>
+              <path d="M22 34 L41 44" stroke="rgba(0,86,23,0.55)" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <div class="flex-1">
+            <div class="text-xs uppercase tracking-wide" style="color: rgba(252,248,248,0.55);">
+              Since deployment
+            </div>
+            <div class="mt-2 text-xl sm:text-2xl font-semibold impact-strong" style="color: var(--font-primary);">
+              From corridor-level pilots to national coverage
+            </div>
+            <div class="mt-2 text-sm sm:text-base" style="color: var(--font-muted);">
+              without changing monitoring effort.
+            </div>
+
+            
+          </div>
+        </div>
       </div>
-    </section>
+
+      <!-- Metric 2 -->
+      <div class="impact-metric rounded-2xl p-6 sm:p-7"
+           style="background: var(--bg-secondary); border: 1px solid var(--border-primary);">
+        <div class="flex items-start gap-4">
+          <div class="impact-icon">
+            <!-- Fewer vehicle paths -->
+            <svg viewBox="0 0 64 64" class="h-8 w-8">
+              <path d="M14 46 C20 34, 28 28, 36 22" stroke="rgba(252,248,248,0.45)" stroke-width="4" stroke-linecap="round"/>
+              <path d="M18 50 C26 36, 34 30, 44 22" stroke="rgba(252,248,248,0.20)" stroke-width="4" stroke-linecap="round"/>
+              <path d="M22 52 C32 38, 40 32, 50 24" stroke="rgba(252,248,248,0.12)" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="44" cy="20" r="4" fill="rgba(0,86,23,0.45)"/>
+            </svg>
+          </div>
+
+          <div class="flex-1">
+            <div class="text-xs uppercase tracking-wide" style="color: rgba(252,248,248,0.55);">
+              Measured outcome
+            </div>
+            <div class="mt-2 text-xl sm:text-2xl font-semibold impact-strong" style="color: var(--font-primary);">
+              Reduced field vehicle surveys
+            </div>
+            <div class="mt-2 text-sm sm:text-base" style="color: var(--font-muted);">
+              and lower operational footprint.
+              <span class="block mt-2" style="color: rgba(252,248,248,0.55);">
+                (Up to X% fewer field inspections — replace when validated)
+              </span>
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Metric 3 -->
+      <div class="impact-metric rounded-2xl p-6 sm:p-7"
+           style="background: var(--bg-secondary); border: 1px solid var(--border-primary);">
+        <div class="flex items-start gap-4">
+          <div class="impact-icon">
+            <!-- Continuous signal wave -->
+            <svg viewBox="0 0 64 64" class="h-8 w-8">
+              <path d="M8 34 C14 26, 18 26, 24 34 C30 42, 34 42, 40 34 C46 26, 50 26, 56 34"
+                    fill="none" stroke="rgba(0,86,23,0.55)" stroke-width="4" stroke-linecap="round"/>
+              <path d="M10 44 L54 44" stroke="rgba(252,248,248,0.18)" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <div class="flex-1">
+            <div class="text-xs uppercase tracking-wide" style="color: rgba(252,248,248,0.55);">
+              Measured outcome
+            </div>
+            <div class="mt-2 text-xl sm:text-2xl font-semibold impact-strong" style="color: var(--font-primary);">
+              Continuous updates
+            </div>
+            <div class="mt-2 text-sm sm:text-base" style="color: var(--font-muted);">
+              instead of episodic measurements.
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Metric 4 -->
+      <div class="impact-metric rounded-2xl p-6 sm:p-7"
+           style="background: var(--bg-secondary); border: 1px solid var(--border-primary);">
+        <div class="flex items-start gap-4">
+          <div class="impact-icon">
+            <!-- Timeline / early intervention -->
+            <svg viewBox="0 0 64 64" class="h-8 w-8">
+              <path d="M10 40 L54 40" stroke="rgba(252,248,248,0.22)" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="22" cy="40" r="5" fill="rgba(0,86,23,0.45)"/>
+              <circle cx="42" cy="40" r="5" fill="rgba(252,248,248,0.20)"/>
+              <path d="M22 40 L42 40" stroke="rgba(0,86,23,0.45)" stroke-width="4" stroke-linecap="round"/>
+              <path d="M18 26 L26 26" stroke="rgba(252,248,248,0.30)" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <div class="flex-1">
+            <div class="text-xs uppercase tracking-wide" style="color: rgba(252,248,248,0.55);">
+              Measured outcome
+            </div>
+            <div class="mt-2 text-xl sm:text-2xl font-semibold impact-strong" style="color: var(--font-primary);">
+              Earlier intervention
+            </div>
+            <div class="mt-2 text-sm sm:text-base" style="color: var(--font-muted);">
+              before deterioration escalates.
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Metric 5 -->
+      <div class="impact-metric rounded-2xl p-6 sm:p-7"
+           style="background: var(--bg-secondary); border: 1px solid var(--border-primary);">
+        <div class="flex items-start gap-4">
+          <div class="impact-icon">
+            <!-- Cost curve flattening -->
+            <svg viewBox="0 0 64 64" class="h-8 w-8">
+              <path d="M12 46 L12 18" stroke="rgba(252,248,248,0.18)" stroke-width="4" stroke-linecap="round"/>
+              <path d="M12 46 L54 46" stroke="rgba(252,248,248,0.18)" stroke-width="4" stroke-linecap="round"/>
+              <path d="M14 44 C24 30, 32 28, 42 26 C48 25, 52 24, 54 22"
+                    fill="none" stroke="rgba(0,86,23,0.55)" stroke-width="4" stroke-linecap="round"/>
+              <path d="M14 44 C22 34, 28 30, 34 28"
+                    fill="none" stroke="rgba(252,248,248,0.18)" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <div class="flex-1">
+            <div class="text-xs uppercase tracking-wide" style="color: rgba(252,248,248,0.55);">
+              Measured outcome
+            </div>
+            <div class="mt-2 text-xl sm:text-2xl font-semibold impact-strong" style="color: var(--font-primary);">
+              Better prioritization
+            </div>
+            <div class="mt-2 text-sm sm:text-base" style="color: var(--font-muted);">
+              helps avoid late-stage repair costs.
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
     <!-- SECTION 6: Contact -->
     <section id="contact" class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16" style="border-top: 1px solid var(--border-muted); padding-top: 64px; padding-bottom: 80px;">
