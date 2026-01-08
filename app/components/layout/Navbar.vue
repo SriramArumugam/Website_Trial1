@@ -38,9 +38,7 @@ function goToSection(hash: string) {
         <a
           href="#top"
           class="flex items-center gap-2 transition-all duration-300"
-          :class="isScrolled
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 -translate-y-2 pointer-events-none'"
+          class="flex items-center gap-2"
           @click.prevent="goToSection('#top')"
         >
           <div

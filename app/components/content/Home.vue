@@ -33,7 +33,7 @@ const products = [
 </script>
 
 <template>
-  <div id="top" class="space-y-0 snap-y snap-mandatory h-screen overflow-y-scroll">
+  <div id="top" class="space-y-0 pt-28 snap-y snap-mandatory h-screen overflow-y-scroll">
     <!-- SECTION 1: Landing -->
     <section class="relative pt-10 min-h-screen flex items-center py-16 snap-start">
       <div class="mx-auto max-w-6xl px-5">
@@ -146,7 +146,7 @@ const products = [
     </section>
 
     <!-- SECTION 2: Anticipation + reveal -->
-    <div class="h-24 min-h-screen flex items-center py-16 snap-start"></div>
+    <div class="h-24 min-h-screen flex items-start pt-28 py-16 snap-start"></div>
         <section
       class="mx-auto max-w-6xl px-5 rounded-2xl"
       style="
@@ -262,7 +262,7 @@ const products = [
     </section>
 
     <!-- SECTION 5: Impact -->
-    <section id="impact" class="mx-auto max-w-6xl px-5" style="border-top: 1px solid var(--border-muted); padding-top: 64px;">
+    <section id="impact" class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16 snap-start" style="border-top: 1px solid var(--border-muted); padding-top: 64px;">
       <h2 class="text-2xl font-semibold sm:text-3xl" style="color: var(--font-primary);">Impact</h2>
 
       <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -294,7 +294,7 @@ const products = [
     </section>
 
     <!-- SECTION 6: Contact -->
-    <section id="contact" class="mx-auto max-w-6xl px-5" style="border-top: 1px solid var(--border-muted); padding-top: 64px; padding-bottom: 80px;">
+    <section id="contact" class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16 snap-start" style="border-top: 1px solid var(--border-muted); padding-top: 64px; padding-bottom: 80px;">
       <div class="rounded-2xl p-8 sm:p-10"
            style="background: var(--bg-secondary); border: 1px solid var(--border-primary);">
         <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
