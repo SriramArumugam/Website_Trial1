@@ -33,10 +33,9 @@ const products = [
 </script>
 
 <template>
-  <div id="top" class="space-y-20 sm:space-y-28">
-
+  <div id="top" class="space-y-0 snap-y snap-mandatory h-screen overflow-y-scroll">
     <!-- SECTION 1: Landing -->
-    <section class="relative pt-10">
+    <section class="relative pt-10 min-h-screen flex items-center py-16 snap-start">
       <div class="mx-auto max-w-6xl px-5">
         <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
@@ -147,7 +146,7 @@ const products = [
     </section>
 
     <!-- SECTION 2: Anticipation + reveal -->
-    <div class="h-24"></div>
+    <div class="h-24 min-h-screen flex items-center py-16 snap-start"></div>
         <section
       class="mx-auto max-w-6xl px-5 rounded-2xl"
       style="
@@ -188,7 +187,7 @@ const products = [
     </section>
 
     <!-- SECTION 3: How it works -->
-    <section id="how" class="mx-auto max-w-6xl px-5" style="border-top: 1px solid var(--border-muted); padding-top: 64px;">
+    <section id="how" class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16 snap-start" style="border-top: 1px solid var(--border-muted); padding-top: 64px;">
       <h2 class="text-2xl font-semibold sm:text-3xl" style="color: var(--font-primary);">How it works</h2>
       <p class="mt-3 max-w-2xl" style="color: var(--font-muted);">
         A simple end-to-end flow that turns satellite signals into actionable road intelligence.
@@ -222,7 +221,7 @@ const products = [
     </section>
 
     <!-- SECTION 4: Products -->
-    <section id="products" class="mx-auto max-w-6xl px-5" style="border-top: 1px solid var(--border-muted); padding-top: 64px;">
+    <section id="products" class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16 snap-start" style="border-top: 1px solid var(--border-muted); padding-top: 64px;">
       <h2 class="text-2xl font-semibold sm:text-3xl" style="color: var(--font-primary);">
         What can WEGtrax do today?
       </h2>
