@@ -29,18 +29,22 @@ function goToSection(hash: string) {
 <template>
   <div class="mx-auto my-2 flex w-full items-center justify-center">
     <header
-    class="w-full"
+    class="class="fixed top-0 left-0 z-50 w-full""
     :class="isScrolled ? 'bg-transparent' : 'bg-[#001217]'"
+    style="
+    background: rgba(0, 18, 23, 0.92);
+    border-bottom: 1px solid rgba(252, 248, 248, 0.08);
+    backdrop-filter: blur(10px);
+  "
     >
           <div class="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-2">
 
         <!-- MINI LOGO (appears after scroll) -->
         <a
-          href="#top"
-          class="flex items-center gap-2 transition-all duration-300"
-          class="flex items-center gap-2"
-          @click.prevent="goToSection('#top')"
-        >
+  href="#top"
+  class="flex items-center gap-2"
+  @click.prevent="goToSection('#top')"
+>
           <div
             class="h-8 w-8 rounded-lg"
             style="background: var(--bg-card-hover);"
