@@ -44,110 +44,55 @@ const products = [
     <!--<section class="relative pt-10 min-h-screen flex items-center py-16 ">-->
       <div class="mx-auto max-w-6xl px-5">
         <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div>
-            <!-- Logo / brand -->
-            <div class="flex items-center gap-3">
-              <!-- If you uploaded a logo: uncomment this -->
-              <!-- <img src="/assets/wegtrax-logo.svg" alt="WEGtrax logo" class="h-10 w-10" /> -->
-              <div class="h-10 w-10 rounded-lg" style="background: var(--bg-card-hover);" />
-              <div class="leading-tight">
-                <div class="text-lg font-semibold" style="color: var(--font-primary);">WEGtrax</div>
-                <div class="text-xs" style="color: var(--font-muted);">Satellite + AI for infrastructure</div>
-              </div>
-            </div>
+  <!-- LEFT: Globe animation (does NOT change background) -->
+  <div class="heroGlobeWrap" aria-hidden="true">
+    <div class="globe-frames">
+      <img src="/hero/globe/eu_globe_01.png" alt="" />
+      <img src="/hero/globe/eu_globe_02.png" alt="" />
+      <img src="/hero/globe/eu_globe_03.png" alt="" />
+      <img src="/hero/globe/eu_globe_04.png" alt="" />
+      <img src="/hero/globe/eu_globe_05.png" alt="" />
+      <img src="/hero/globe/eu_globe_06.png" alt="" />
+      <img src="/hero/globe/eu_globe_07.png" alt="" />
+      <img src="/hero/globe/eu_globe_08.png" alt="" />
+    </div>
+  </div>
 
-            <h1 class="mt-6 text-3xl font-semibold sm:text-4xl lg:text-5xl" style="color: var(--font-primary);">
-              Road condition intelligence — at national scale
-            </h1>
-
-            <p class="mt-4 max-w-xl text-base sm:text-lg" style="color: var(--font-muted);">
-              Monitor road quality continuously and consistently — without vehicle surveys, sensors, or disruption.
-            </p>
-
-            <div class="mt-6 flex flex-wrap gap-3">
-              <a href="#how" class="rounded-md px-5 py-3 text-sm font-medium"
-                 style="background: var(--bg-card-hover); color: var(--font-primary);">
-                See how it works
-              </a>
-              <a href="#products" class="rounded-md px-5 py-3 text-sm font-medium"
-                 style="border: 1px solid var(--border-primary); color: var(--font-primary);">
-                What we do today
-              </a>
-            </div>
-          </div>
-
-          <!-- Interactive map mock -->
-          <div class="rounded-2xl p-5"
-               style="background: var(--bg-secondary); border: 1px solid var(--border-primary);">
-            <div class="flex flex-wrap items-center justify-between gap-3">
-              <div class="text-sm" style="color: var(--font-muted);">National network view (mock)</div>
-
-              <div class="flex gap-2">
-                <button
-                  class="rounded-full px-3 py-1 text-xs"
-                  :style="mode==='Roughness'
-                    ? 'border:1px solid var(--border-primary-hover); background: rgba(252,248,248,0.06); color: var(--font-primary);'
-                    : 'border:1px solid var(--border-primary); background: transparent; color: rgba(252,248,248,0.7);'"
-                  @mouseenter="mode='Roughness'"
-                  @click="mode='Roughness'"
-                >Roughness</button>
-
-                <button
-                  class="rounded-full px-3 py-1 text-xs"
-                  :style="mode==='Deformation'
-                    ? 'border:1px solid var(--border-primary-hover); background: rgba(252,248,248,0.06); color: var(--font-primary);'
-                    : 'border:1px solid var(--border-primary); background: transparent; color: rgba(252,248,248,0.7);'"
-                  @mouseenter="mode='Deformation'"
-                  @click="mode='Deformation'"
-                >Deformation</button>
-
-                <button
-                  class="rounded-full px-3 py-1 text-xs"
-                  :style="mode==='Risk'
-                    ? 'border:1px solid var(--border-primary-hover); background: rgba(252,248,248,0.06); color: var(--font-primary);'
-                    : 'border:1px solid var(--border-primary); background: transparent; color: rgba(252,248,248,0.7);'"
-                  @mouseenter="mode='Risk'"
-                  @click="mode='Risk'"
-                >Risk</button>
-              </div>
-            </div>
-
-            <div class="relative mt-4 overflow-hidden rounded-xl"
-                 style="background:#001217; border: 1px solid var(--border-muted);">
-              <div class="h-64">
-                <!-- “roads” -->
-                <div class="absolute left-8 top-12 h-1 w-[70%] rotate-[8deg] rounded-full" style="background: rgba(252,248,248,0.12);" />
-                <div class="absolute left-16 top-28 h-1 w-[60%] -rotate-[12deg] rounded-full" style="background: rgba(252,248,248,0.12);" />
-                <div class="absolute left-10 top-44 h-1 w-[75%] rotate-[2deg] rounded-full" style="background: rgba(252,248,248,0.12);" />
-
-                <!-- mode label -->
-                <div class="absolute right-4 top-4 rounded-md px-3 py-2 text-xs"
-                     style="border: 1px solid var(--border-muted); background: rgba(252,248,248,0.04); color: var(--font-muted);">
-                  Hover mode: <span style="color: var(--font-primary);">{{ mode }}</span>
-                </div>
-
-                <!-- points -->
-                <template v-if="mode==='Roughness'">
-                  <div class="absolute left-[22%] top-[34%] h-3 w-3 rounded-full" style="background:#E2DCDE;" />
-                  <div class="absolute left-[46%] top-[55%] h-3 w-3 rounded-full" style="background:#E2DCDE;" />
-                  <div class="absolute left-[63%] top-[40%] h-3 w-3 rounded-full" style="background:#E2DCDE;" />
-                </template>
-
-                <template v-else-if="mode==='Deformation'">
-                  <div class="absolute left-[28%] top-[30%] h-3 w-3 rounded-full" style="background:#20504C;" />
-                  <div class="absolute left-[52%] top-[58%] h-3 w-3 rounded-full" style="background:#20504C;" />
-                  <div class="absolute left-[70%] top-[45%] h-3 w-3 rounded-full" style="background:#20504C;" />
-                </template>
-
-                <template v-else>
-                  <div class="absolute left-[18%] top-[38%] h-3 w-3 rounded-full" style="background:#FCF8F8;" />
-                  <div class="absolute left-[44%] top-[60%] h-3 w-3 rounded-full" style="background:#FCF8F8;" />
-                  <div class="absolute left-[60%] top-[42%] h-3 w-3 rounded-full" style="background:#FCF8F8;" />
-                </template>
-              </div>
-            </div>
-          </div>
+  <!-- RIGHT: Your existing copy (keep your text + buttons) -->
+  <div class="heroCopy">
+    <!-- keep your existing logo/title/subtitle/buttons here -->
+    <!-- I’m pasting your existing block unchanged so you can drop it in -->
+    <div>
+      <div class="flex items-center gap-3">
+        <div class="h-10 w-10 rounded-lg" style="background: var(--bg-card-hover);" />
+        <div class="leading-tight">
+          <div class="text-lg font-semibold" style="color: var(--font-primary);">WEGtrax</div>
+          <div class="text-xs" style="color: var(--font-muted);">Satellite + AI for infrastructure</div>
         </div>
+      </div>
+
+      <h1 class="mt-6 text-3xl font-semibold sm:text-4xl lg:text-5xl" style="color: var(--font-primary);">
+        Road condition intelligence — at national scale
+      </h1>
+
+      <p class="mt-4 max-w-xl text-base sm:text-lg" style="color: var(--font-muted);">
+        Monitor road quality continuously and consistently — without vehicle surveys, sensors, or disruption.
+      </p>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="#how" class="rounded-md px-5 py-3 text-sm font-medium"
+           style="background: var(--bg-card-hover); color: var(--font-primary);">
+          See how it works
+        </a>
+        <a href="#products" class="rounded-md px-5 py-3 text-sm font-medium"
+           style="border: 1px solid var(--border-primary); color: var(--font-primary);">
+          What we do today
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
       </div>
     </section>
 
@@ -564,6 +509,88 @@ const products = [
 .product-tile:hover .product-cta {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* --- HERO globe animation (8 frames, smooth loop) --- */
+:root{
+  --frames: 8;
+  --loop: 24s; /* try 28s for more premium slow */
+}
+
+/* Left globe container */
+.heroGlobeWrap{
+  position: relative;
+  width: clamp(420px, 46vw, 720px);
+  height: clamp(420px, 46vw, 720px);
+  margin-left: clamp(-140px, -10vw, -60px); /* makes it feel like a “half globe” */
+  pointer-events: none;
+  opacity: 0.92;
+  filter: saturate(0.95) contrast(1.02);
+}
+
+/* Soft fade so globe blends with your existing background (doesn't disturb it) */
+.heroGlobeWrap::after{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background: radial-gradient(circle at 35% 50%,
+    rgba(1,32,40,0.0) 0%,
+    rgba(1,32,40,0.0) 52%,
+    rgba(1,32,40,0.75) 72%,
+    rgba(1,32,40,1.0) 100%);
+  pointer-events: none;
+}
+
+.globe-frames{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.globe-frames img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  animation: globeFade var(--loop) infinite;
+  will-change: opacity;
+}
+
+/* Stagger each frame */
+.globe-frames img:nth-child(1){ animation-delay: calc(var(--loop) * 0/var(--frames)); }
+.globe-frames img:nth-child(2){ animation-delay: calc(var(--loop) * 1/var(--frames)); }
+.globe-frames img:nth-child(3){ animation-delay: calc(var(--loop) * 2/var(--frames)); }
+.globe-frames img:nth-child(4){ animation-delay: calc(var(--loop) * 3/var(--frames)); }
+.globe-frames img:nth-child(5){ animation-delay: calc(var(--loop) * 4/var(--frames)); }
+.globe-frames img:nth-child(6){ animation-delay: calc(var(--loop) * 5/var(--frames)); }
+.globe-frames img:nth-child(7){ animation-delay: calc(var(--loop) * 6/var(--frames)); }
+.globe-frames img:nth-child(8){ animation-delay: calc(var(--loop) * 7/var(--frames)); }
+
+@keyframes globeFade{
+  0%   { opacity: 0; }
+  8%   { opacity: 1; }
+  44%  { opacity: 1; }
+  52%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Right copy panel - keeps spacing clean */
+.heroCopy{
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile tuning */
+@media (max-width: 820px){
+  .heroGlobeWrap{
+    margin-left: -220px;
+    width: 640px;
+    height: 640px;
+    opacity: 0.85;
+    filter: saturate(0.92) contrast(0.98);
+  }
 }
 
 
