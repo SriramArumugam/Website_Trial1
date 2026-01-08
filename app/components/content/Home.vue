@@ -33,7 +33,7 @@ const products = [
 </script>
 
 <template>
-  <div class="space-y-20 sm:space-y-28">
+  <div id="top" class="space-y-20 sm:space-y-28">
 
     <!-- SECTION 1: Landing -->
     <section class="relative pt-10">

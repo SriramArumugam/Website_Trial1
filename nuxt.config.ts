@@ -94,19 +94,13 @@ export default defineNuxtConfig({
     },
   },
 
-  i18n: {
-    locales: [
-      { code: 'en', name: 'English', language: 'en-US' },
-      { code: 'fr', name: 'French', language: 'fr-FR' },
-    ],
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'root',
-    },
-    strategy: 'prefix',
-    defaultLocale: 'en',
-  },
+ i18n: {
+  locales: [{ code: 'en', name: 'English', language: 'en-US' }],
+  defaultLocale: 'en',
+  strategy: 'no_prefix',
+  detectBrowserLanguage: false,
+},
+
 
   icon: {
     customCollections: [
