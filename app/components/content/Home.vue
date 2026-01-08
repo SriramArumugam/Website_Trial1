@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
+const localePath = useLocalePath()
 const mode = ref<'Roughness' | 'Deformation' | 'Risk'>('Roughness')
 
 const products = [
@@ -230,10 +231,14 @@ const products = [
           </div>
 
           <div class="mt-6 flex items-center gap-3">
-            <NuxtLink :to="p.href" class="rounded-md px-4 py-2 text-sm font-medium"
-                      style="background: var(--bg-card-hover); color: var(--font-primary);">
-              More
-            </NuxtLink>
+            <NuxtLink
+            :to="localePath(p.href)"
+            class="rounded-md px-4 py-2 text-sm font-medium"
+            style="background: var(--bg-card-hover); color: var(--font-primary);"
+            :aria-label="`View details for ${p.title}`"
+            >
+            View details
+          </NuxtLink>
 
             <a href="#contact" class="text-sm" style="color: rgba(252,248,248,0.75);">
               Discuss a pilot →
