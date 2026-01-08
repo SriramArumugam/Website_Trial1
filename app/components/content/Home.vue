@@ -33,7 +33,7 @@ const products = [
 </script>
 
 <template>
-  <div id="top" class="space-y-0 pt-28 snap-y snap-mandatory h-screen overflow-y-scroll">
+  <div id="top" class="space-y-0 pt-24 snap-y snap-mandatory h-screen overflow-y-scroll">
     <!-- SECTION 1: Landing -->
     <section class="relative pt-10 min-h-screen flex items-center py-16 snap-start">
       <div class="mx-auto max-w-6xl px-5">

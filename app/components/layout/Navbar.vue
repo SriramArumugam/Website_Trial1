@@ -29,64 +29,48 @@ function goToSection(hash: string) {
 <template>
   <div class="mx-auto my-2 flex w-full items-center justify-center">
     <header
-    class="class="fixed top-0 left-0 z-50 w-full""
-    :class="isScrolled ? 'bg-transparent' : 'bg-[#001217]'"
-    style="
-    background: rgba(0, 18, 23, 0.92);
-    border-bottom: 1px solid rgba(252, 248, 248, 0.08);
-    backdrop-filter: blur(10px);
-  "
+      class="fixed left-0 top-0 z-50 w-full"
+      style="
+        background: rgba(0, 18, 23, 0.92);
+        border-bottom: 1px solid rgba(252, 248, 248, 0.08);
+        backdrop-filter: blur(10px);
+      "
     >
-          <div class="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-2">
-
-        <!-- MINI LOGO (appears after scroll) -->
+      <div class="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-2">
+        <!-- LOGO -->
         <a
-  href="#top"
-  class="flex items-center gap-2"
-  @click.prevent="goToSection('#top')"
->
-          <div
-            class="h-8 w-8 rounded-lg"
-            style="background: var(--bg-card-hover);"
-          />
+          href="#top"
+          class="flex items-center gap-2"
+          @click.prevent="goToSection('#top')"
+        >
+          <div class="h-8 w-8 rounded-lg" style="background: var(--bg-card-hover);" />
           <div class="hidden sm:block leading-tight">
-            <div
-              class="text-sm font-semibold"
-              style="color: var(--font-primary);"
-            >
+            <div class="text-sm font-semibold" style="color: var(--font-primary);">
               WEGtrax
             </div>
-            <div
-              class="text-[11px]"
-              style="color: var(--font-muted);"
-            >
+            <div class="text-[11px]" style="color: var(--font-muted);">
               Satellite + AI
             </div>
           </div>
         </a>
 
-        <!-- NAV ICONS (your existing navigation) -->
-        <nav
-          class="z-10 flex h-[50px] items-center justify-around gap-2 p-1 transition-all duration-300 ease-in-out sm:h-[45px] sm:hover:gap-4"
-        >
+        <!-- NAV ICONS -->
+        <nav class="z-10 flex h-[50px] items-center justify-around gap-2 p-1 transition-all duration-300 ease-in-out sm:h-[45px] sm:hover:gap-4">
           <button
             v-for="item in navigation"
             :id="item.name.toLowerCase()"
             :key="item.name"
-            :aria-label="item.name + ' navigation link'"
-            class="flex items-center rounded-full border border-transparent px-4 py-1 transition-all duration-300 ease-in-out
-                   text-muted hover:border-white/5 hover:bg-zinc-900/50 hover:backdrop-blur-3xl sm:px-6"
+            type="button"
+            :aria-label="item.name"
+            :title="item.name"
+            class="flex items-center rounded-full border border-transparent px-4 py-1 text-white/80 transition-all duration-300 ease-in-out hover:border-white/5 hover:bg-zinc-900/50 hover:backdrop-blur-3xl sm:px-6"
             @click="goToSection(item.to)"
           >
-            <UIcon
-              :name="item.icon"
-              class="size-7 font-light sm:size-6"
-            />
+            <UIcon :name="item.icon" class="size-7 font-light sm:size-6" />
           </button>
         </nav>
-
       </div>
-
     </header>
   </div>
 </template>
+
