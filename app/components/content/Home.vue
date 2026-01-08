@@ -33,9 +33,10 @@ const products = [
 </script>
 
 <template>
-  <div id="top" class="space-y-0 pt-24 h-screen overflow-y-scroll">
+  <div id="top" class="space-y-0">
     <!-- SECTION 1: Landing -->
-    <section class="relative pt-10 min-h-screen flex items-center py-16 ">
+    <section class="relative min-h-screen flex items-center ">
+    <!--<section class="relative pt-10 min-h-screen flex items-center py-16 ">-->
       <div class="mx-auto max-w-6xl px-5">
         <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
@@ -145,49 +146,109 @@ const products = [
       </div>
     </section>
 
-    <!-- SECTION 2: Anticipation + reveal -->
-    <div class="h-24 min-h-screen flex items-start pt-28 py-16 "></div>
-        <section
-      class="mx-auto max-w-6xl px-5 rounded-2xl"
-      style="
-        background: linear-gradient(
-          180deg,
-          rgba(0, 18, 23, 0.85),
-          rgba(0, 18, 23, 0.65)
-        );
-        border: 1px solid rgba(252, 248, 248, 0.08);
-        padding-top: 64px;
-        padding-bottom: 64px;
-      "
-    >
+   <!-- SECTION 2: Writings / Why different -->
+<section id="writings" class="relative min-h-screen flex items-center">
+  <div class="mx-auto w-full max-w-6xl px-5 py-20">
 
-      <h2 class="text-2xl font-semibold sm:text-3xl" style="color: var(--font-primary);">
-        A different way to monitor roads
-      </h2>
+    <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+      <!-- LEFT -->
+      <div>
+        <p class="text-sm tracking-wide text-white/60">Writings</p>
 
-      <div class="mt-6 space-y-2 text-xl sm:text-2xl" style="color: var(--font-muted);">
-        <div>Traditional road monitoring happens on the road.</div>
-        <div style="color: var(--font-primary); font-weight: 600;">WEGtrax does not.</div>
+        <h2 class="mt-3 text-3xl font-semibold text-white sm:text-4xl">
+          Traditional road monitoring happens <span class="text-white/70">on the road.</span><br />
+          <span class="text-white">WEGtrax does not.</span>
+        </h2>
+
+        <p class="mt-4 max-w-xl text-white/70">
+          We use satellite radar to observe the network frequently, detect surface response, and translate patterns into degradation signals.
+        </p>
+
+        <div class="mt-8 grid gap-4">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+            <div class="flex items-start gap-4">
+              <div class="mt-1 h-10 w-10 rounded-xl bg-white/10 flex items-center justify-center">
+                <span class="text-white/80 text-lg">🛰️</span>
+              </div>
+              <div>
+                <div class="text-white font-medium">Satellites already observe every road</div>
+                <div class="mt-1 text-sm text-white/60">
+                  Frequent coverage across regions — even where surveys are hard to run.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+            <div class="flex items-start gap-4">
+              <div class="mt-1 h-10 w-10 rounded-xl bg-white/10 flex items-center justify-center">
+                <span class="text-white/80 text-lg">📡</span>
+              </div>
+              <div>
+                <div class="text-white font-medium">Radar responds to surface properties</div>
+                <div class="mt-1 text-sm text-white/60">
+                  Signal changes reflect texture/structure differences in the surface.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+            <div class="flex items-start gap-4">
+              <div class="mt-1 h-10 w-10 rounded-xl bg-white/10 flex items-center justify-center">
+                <span class="text-white/80 text-lg">📈</span>
+              </div>
+              <div>
+                <div class="text-white font-medium">Patterns correlate with degradation</div>
+                <div class="mt-1 text-sm text-white/60">
+                  AI converts patterns into insights for prioritization and planning.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="mt-10 grid gap-4 sm:grid-cols-3">
-        <div class="rounded-xl p-5" style="border: 1px solid var(--border-primary); background: rgba(252,248,248,0.04);">
-          <div class="text-sm" style="color: rgba(252,248,248,0.6);">01</div>
-          <div class="mt-2 font-medium" style="color: var(--font-primary);">Satellites already observe every road.</div>
-        </div>
-        <div class="rounded-xl p-5" style="border: 1px solid var(--border-primary); background: rgba(252,248,248,0.04);">
-          <div class="text-sm" style="color: rgba(252,248,248,0.6);">02</div>
-          <div class="mt-2 font-medium" style="color: var(--font-primary);">Radar responds to surface properties.</div>
-        </div>
-        <div class="rounded-xl p-5" style="border: 1px solid var(--border-primary); background: rgba(252,248,248,0.04);">
-          <div class="text-sm" style="color: rgba(252,248,248,0.6);">03</div>
-          <div class="mt-2 font-medium" style="color: var(--font-primary);">Patterns correlate with degradation.</div>
+      <!-- RIGHT: Illustration panel -->
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+        <div class="text-sm text-white/70">How the signal becomes insight (mock)</div>
+
+        <div class="mt-4 rounded-2xl border border-white/10 bg-[#001217] p-5">
+          <div class="flex items-center justify-between text-xs text-white/60">
+            <span>Road network</span>
+            <span>Satellite passes</span>
+          </div>
+
+          <div class="mt-4 h-44 rounded-xl bg-black/20 relative overflow-hidden">
+            <div class="absolute left-6 top-8 h-1 w-2/3 bg-white/10 rounded"></div>
+            <div class="absolute left-10 top-20 h-1 w-3/4 bg-white/10 rounded"></div>
+            <div class="absolute left-16 top-32 h-1 w-1/2 bg-white/10 rounded"></div>
+
+            <div class="absolute left-20 top-14 h-3 w-3 rounded-full bg-white/70"></div>
+            <div class="absolute left-56 top-24 h-3 w-3 rounded-full bg-white/70"></div>
+            <div class="absolute left-40 top-34 h-3 w-3 rounded-full bg-white/70"></div>
+
+            <div class="absolute right-4 top-4 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/70">
+              Detect change → flag segments
+            </div>
+          </div>
+
+          <div class="mt-4 grid grid-cols-3 gap-2 text-xs">
+            <div class="rounded-lg bg-white/5 border border-white/10 p-2 text-white/70">Observe</div>
+            <div class="rounded-lg bg-white/5 border border-white/10 p-2 text-white/70">Interpret</div>
+            <div class="rounded-lg bg-white/5 border border-white/10 p-2 text-white/70">Prioritize</div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+
+  </div>
+</section>
+
 
     <!-- SECTION 3: How it works -->
     <section id="how" class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16 " style="border-top: 1px solid var(--border-muted); padding-top: 64px;">
+    <div class="w-full">
       <h2 class="text-2xl font-semibold sm:text-3xl" style="color: var(--font-primary);">How it works</h2>
       <p class="mt-3 max-w-2xl" style="color: var(--font-muted);">
         A simple end-to-end flow that turns satellite signals into actionable road intelligence.
@@ -218,10 +279,12 @@ const products = [
           <div class="mt-2 text-sm" style="color: var(--font-muted);">Dashboards + exports for planning and action.</div>
         </div>
       </div>
+      </div>
     </section>
 
     <!-- SECTION 4: Products -->
     <section id="products" class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16" style="border-top: 1px solid var(--border-muted); padding-top: 64px;">
+    <div class="w-full">
       <h2 class="text-2xl font-semibold sm:text-3xl" style="color: var(--font-primary);">
         What can WEGtrax do today?
       </h2>
@@ -259,10 +322,12 @@ const products = [
           </div>
         </div>
       </div>
+      </div>
     </section>
 
     <!-- SECTION 5: Impact -->
     <section id="impact" class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16 " style="border-top: 1px solid var(--border-muted); padding-top: 64px;">
+    <div class="w-full">
       <h2 class="text-2xl font-semibold sm:text-3xl" style="color: var(--font-primary);">Impact</h2>
 
       <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -291,10 +356,12 @@ const products = [
           <div class="mt-2 text-sm" style="color: var(--font-muted);">Better prioritization helps avoid expensive late-stage work.</div>
         </div>
       </div>
+      </div>
     </section>
 
     <!-- SECTION 6: Contact -->
     <section id="contact" class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16" style="border-top: 1px solid var(--border-muted); padding-top: 64px; padding-bottom: 80px;">
+    <div class="w-full">
       <div class="rounded-2xl p-8 sm:p-10"
            style="background: var(--bg-secondary); border: 1px solid var(--border-primary);">
         <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
@@ -322,6 +389,7 @@ const products = [
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
 
