@@ -22,19 +22,23 @@
 }
 
 html.dark {
-  --ui-bg: var(--color-neutral-950);
-  --bg-secondary: #282828;
-  --bg-card: #282828;
-  --bg-card-hover: #343434;
+  /* Base surfaces */
+  --ui-bg: #001217;          /* page background */
+  --bg-secondary: #022128;   /* section background */
+  --bg-card: #022128;        /* card background */
+  --bg-card-hover: #20504C;  /* card hover accent */
 
-  --font-primary: #ededed;
-  --font-muted: #808080;
-  --font-inverted: #282828;
+  /* Text */
+  --font-primary: #FCF8F8;   /* main text */
+  --font-muted: #E2DCDE;     /* muted text */
+  --font-inverted: #001217;  /* dark text on light */
 
-  --border-primary: #2E2E2E;
-  --border-primary-hover: #3E3E3E;
-  --border-muted: #1C1822;
-  --font-placeholder: #707070;
+  /* Borders */
+  --border-primary: rgba(252, 248, 248, 0.12);
+  --border-primary-hover: rgba(252, 248, 248, 0.22);
+  --border-muted: rgba(252, 248, 248, 0.08);
+
+  --font-placeholder: rgba(252, 248, 248, 0.45);
 }
 
 html, body, #__nuxt, #__layout {
