@@ -94,7 +94,7 @@ export default defineNuxtConfig({
     },
   },
 
- i18n: {
+  i18n: {
   locales: [{ code: 'en', name: 'English', language: 'en-US' }],
   defaultLocale: 'en',
   strategy: 'no_prefix',
@@ -130,4 +130,11 @@ export default defineNuxtConfig({
       branch: 'main',
     },
   },
+  nitro: {
+  prerender: {
+    crawlLinks: false,
+    routes: ['/'],
+  },
+},
+
 })
