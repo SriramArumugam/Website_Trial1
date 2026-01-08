@@ -33,9 +33,9 @@ const products = [
 </script>
 
 <template>
-  <div id="top" class="space-y-0 pt-24 snap-y snap-mandatory h-screen overflow-y-scroll">
+  <div id="top" class="space-y-0 pt-24 h-screen overflow-y-scroll">
     <!-- SECTION 1: Landing -->
-    <section class="relative pt-10 min-h-screen flex items-center py-16 snap-start">
+    <section class="relative pt-10 min-h-screen flex items-center py-16 ">
       <div class="mx-auto max-w-6xl px-5">
         <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
@@ -146,7 +146,7 @@ const products = [
     </section>
 
     <!-- SECTION 2: Anticipation + reveal -->
-    <div class="h-24 min-h-screen flex items-start pt-28 py-16 snap-start"></div>
+    <div class="h-24 min-h-screen flex items-start pt-28 py-16 "></div>
         <section
       class="mx-auto max-w-6xl px-5 rounded-2xl"
       style="
@@ -187,7 +187,7 @@ const products = [
     </section>
 
     <!-- SECTION 3: How it works -->
-    <section id="how" class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16 snap-start" style="border-top: 1px solid var(--border-muted); padding-top: 64px;">
+    <section id="how" class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16 " style="border-top: 1px solid var(--border-muted); padding-top: 64px;">
       <h2 class="text-2xl font-semibold sm:text-3xl" style="color: var(--font-primary);">How it works</h2>
       <p class="mt-3 max-w-2xl" style="color: var(--font-muted);">
         A simple end-to-end flow that turns satellite signals into actionable road intelligence.
@@ -221,7 +221,7 @@ const products = [
     </section>
 
     <!-- SECTION 4: Products -->
-    <section id="products" class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16 snap-start" style="border-top: 1px solid var(--border-muted); padding-top: 64px;">
+    <section id="products" class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16" style="border-top: 1px solid var(--border-muted); padding-top: 64px;">
       <h2 class="text-2xl font-semibold sm:text-3xl" style="color: var(--font-primary);">
         What can WEGtrax do today?
       </h2>
@@ -262,7 +262,7 @@ const products = [
     </section>
 
     <!-- SECTION 5: Impact -->
-    <section id="impact" class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16 snap-start" style="border-top: 1px solid var(--border-muted); padding-top: 64px;">
+    <section id="impact" class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16 " style="border-top: 1px solid var(--border-muted); padding-top: 64px;">
       <h2 class="text-2xl font-semibold sm:text-3xl" style="color: var(--font-primary);">Impact</h2>
 
       <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -294,7 +294,7 @@ const products = [
     </section>
 
     <!-- SECTION 6: Contact -->
-    <section id="contact" class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16 snap-start" style="border-top: 1px solid var(--border-muted); padding-top: 64px; padding-bottom: 80px;">
+    <section id="contact" class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16" style="border-top: 1px solid var(--border-muted); padding-top: 64px; padding-bottom: 80px;">
       <div class="rounded-2xl p-8 sm:p-10"
            style="background: var(--bg-secondary); border: 1px solid var(--border-primary);">
         <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
