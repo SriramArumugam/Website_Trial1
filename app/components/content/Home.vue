@@ -147,7 +147,21 @@ const products = [
     </section>
 
     <!-- SECTION 2: Anticipation + reveal -->
-    <section class="mx-auto max-w-6xl px-5" style="border-top: 1px solid var(--border-muted); padding-top: 64px;">
+    <div class="h-24"></div>
+        <section
+      class="mx-auto max-w-6xl px-5 rounded-2xl"
+      style="
+        background: linear-gradient(
+          180deg,
+          rgba(0, 18, 23, 0.85),
+          rgba(0, 18, 23, 0.65)
+        );
+        border: 1px solid rgba(252, 248, 248, 0.08);
+        padding-top: 64px;
+        padding-bottom: 64px;
+      "
+    >
+
       <h2 class="text-2xl font-semibold sm:text-3xl" style="color: var(--font-primary);">
         A different way to monitor roads
       </h2>
