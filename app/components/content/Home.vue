@@ -7,29 +7,34 @@ const mode = ref<'Roughness' | 'Deformation' | 'Risk'>('Roughness')
 const products = [
   {
     title: 'Road Roughness Estimation',
-    subtitle: 'Where ride quality is degrading',
-    detail: 'Network-level roughness insights to prioritize maintenance and track trends over time.',
+    insight: 'Detects network-wide roughness trends before complaints arise.',
     href: '/products/road-roughness',
+    image: '/products/road-roughness.png',
+    art: 'roughness',
   },
   {
     title: 'Deformation & Subsidence Mapping',
-    subtitle: 'Where the ground itself is moving',
-    detail: 'Early indicators of instability that can affect road structure and long-term safety.',
+    insight: 'Identifies early ground movement that can affect long-term road stability.',
     href: '/products/deformation',
+    image: '/products/deformation-subsidence.png',
+    art: 'deformation',
   },
   {
     title: 'Lane Markings Visibility Monitoring',
-    subtitle: 'What drivers rely on at night',
-    detail: 'Visibility and degradation tracking to support safety compliance and planning.',
+    insight: 'Tracks marking clarity to support night-time safety and compliance.',
     href: '/products/lane-markings',
+    image: '/products/lane-markings.png',
+    art: 'lanes',
   },
   {
     title: 'Pavement Deterioration Early Warning',
-    subtitle: 'Before issues become hazards',
-    detail: 'Proactive signals to shift from delayed repairs to preventive maintenance.',
+    insight: 'Flags subtle pre-failure signals before defects become hazards.',
     href: '/products/early-warning',
+    image: '/products/pavement-early-warning.png',
+    art: 'warning',
   },
 ]
+
 </script>
 
 <template>
@@ -496,51 +501,176 @@ const products = [
   border: 1px solid rgba(252,248,248,0.10);
   background: rgba(252,248,248,0.04);
 }
+
+/* Taller cards with breathing room */
+.product-tile {
+  min-height: 440px;
+  transform: translateY(0);
+  transition: transform 250ms ease, border-color 250ms ease;
+}
+
+/* Image area: top ~58% */
+.product-media {
+  height: 58%;
+  min-height: 250px;
+  background: #012028;
+}
+
+/* Muted by default */
+.product-img {
+  filter: grayscale(0.15) contrast(0.95) saturate(0.9);
+  transition: filter 900ms ease, opacity 250ms ease;
+}
+
+/* Overlay to “calm” visuals */
+.product-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(1, 32, 40, 0.25),
+    rgba(1, 32, 40, 0.55)
+  );
+  transition: opacity 250ms ease;
+  opacity: 1;
+}
+
+/* The highlighted “signal” exists but hidden until hover */
+.signal {
+  opacity: 0;
+  transition: opacity 350ms ease;
+}
+
+/* CTA hidden until hover */
+.product-cta {
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 250ms ease, transform 250ms ease;
+}
+
+/* Hover: lift + sharpen + signal appears + CTA fades in */
+.product-tile:hover {
+  transform: translateY(-4px);
+  border-color: rgba(252, 248, 248, 0.18);
+}
+
+.product-tile:hover .product-img {
+  filter: grayscale(0) contrast(1.05) saturate(1);
+  opacity: 0.9;
+}
+
+.product-tile:hover .signal {
+  opacity: 1;
+}
+
+.product-tile:hover .product-cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 </style>
 
 
     <!-- SECTION 4: Products -->
-    <section id="products" class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16" style="border-top: 1px solid var(--border-muted); padding-top: 64px;">
-    <div class="w-full">
-      <h2 class="text-2xl font-semibold sm:text-3xl" style="color: var(--font-primary);">
-        What can WEGtrax do today?
-      </h2>
-      <p class="mt-3 max-w-2xl" style="color: var(--font-muted);">
-        Hover each card for details — click “More” for a dedicated page.
-      </p>
+<section
+  id="products"
+  class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16"
+  style="border-top: 1px solid var(--border-muted); padding-top: 64px;"
+>
+  <div class="w-full">
+    <h2 class="text-2xl font-semibold sm:text-3xl" style="color: var(--font-primary);">
+      What WEGtrax monitors — continuously
+    </h2>
+    <p class="mt-3 max-w-2xl" style="color: var(--font-muted);">
+      Signal-based intelligence for proactive infrastructure decisions.
+    </p>
 
-      <div class="mt-10 grid gap-4 sm:grid-cols-2">
-        <div
-          v-for="p in products"
-          :key="p.title"
-          class="group rounded-xl p-6 transition"
-          style="background: var(--bg-secondary); border: 1px solid var(--border-primary);"
-        >
-          <div class="text-lg font-semibold" style="color: var(--font-primary);">{{ p.title }}</div>
-          <div class="mt-1 text-sm" style="color: rgba(252,248,248,0.7);">{{ p.subtitle }}</div>
+    <!-- 1 x 4 grid (desktop), stacked on mobile -->
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <NuxtLink
+        v-for="p in products"
+        :key="p.title"
+        :to="localePath(p.href)"
+        class="product-tile group block rounded-2xl overflow-hidden"
+        :aria-label="`View details for ${p.title}`"
+        style="background: var(--bg-secondary); border: 1px solid var(--border-primary);"
+      >
+        <!-- IMAGE (top 55-60%) -->
+        <div class="product-media relative">
+          <!-- If the image exists, browser shows it. If not, fallback SVG still shows under it. -->
+          <img
+            :src="p.image"
+            alt=""
+            class="product-img absolute inset-0 h-full w-full object-cover opacity-70"
+            loading="lazy"
+            @error="(e) => ((e.target as HTMLImageElement).style.display = 'none')"
+          />
 
-          <div class="mt-4 text-sm opacity-0 transition group-hover:opacity-100" style="color: var(--font-muted);">
-            {{ p.detail }}
+          <!-- SVG fallback background (always rendered, image sits on top if present) -->
+          <div class="absolute inset-0">
+            <!-- Roughness -->
+            <svg v-if="p.art==='roughness'" viewBox="0 0 560 360" class="h-full w-full">
+              <rect width="560" height="360" fill="#012028" />
+              <path d="M40 250 C120 170, 200 290, 280 210 C360 130, 440 290, 520 190"
+                    fill="none" stroke="rgba(252,248,248,0.16)" stroke-width="10" stroke-linecap="round"/>
+              <path class="signal"
+                    d="M40 250 C120 170, 200 290, 280 210 C360 130, 440 290, 520 190"
+                    fill="none" stroke="rgba(0,86,23,0.75)" stroke-width="6" stroke-linecap="round"
+                    stroke-dasharray="16 14"/>
+              <circle cx="210" cy="250" r="10" fill="rgba(0,86,23,0.45)"/>
+              <circle cx="360" cy="195" r="10" fill="rgba(0,86,23,0.45)"/>
+            </svg>
+
+            <!-- Deformation -->
+            <svg v-else-if="p.art==='deformation'" viewBox="0 0 560 360" class="h-full w-full">
+              <rect width="560" height="360" fill="#012028" />
+              <path d="M80 120 L480 120" stroke="rgba(252,248,248,0.14)" stroke-width="12" stroke-linecap="round"/>
+              <path d="M80 230 L480 230" stroke="rgba(252,248,248,0.10)" stroke-width="12" stroke-linecap="round"/>
+              <path class="signal" d="M280 70 L280 300" stroke="rgba(0,86,23,0.70)" stroke-width="6" stroke-dasharray="14 14"/>
+              <path d="M200 120 C250 145, 310 95, 360 120" fill="none" stroke="rgba(0,86,23,0.40)" stroke-width="8"/>
+            </svg>
+
+            <!-- Lane markings -->
+            <svg v-else-if="p.art==='lanes'" viewBox="0 0 560 360" class="h-full w-full">
+              <rect width="560" height="360" fill="#012028" />
+              <path d="M190 40 L90 360" stroke="rgba(252,248,248,0.12)" stroke-width="12" stroke-linecap="round"/>
+              <path d="M370 40 L470 360" stroke="rgba(252,248,248,0.12)" stroke-width="12" stroke-linecap="round"/>
+              <path d="M280 60 L280 340" stroke="rgba(252,248,248,0.10)" stroke-width="8" stroke-dasharray="18 16" stroke-linecap="round"/>
+              <path class="signal" d="M280 60 L280 340" stroke="rgba(0,86,23,0.65)" stroke-width="8" stroke-dasharray="24 22" stroke-linecap="round"/>
+            </svg>
+
+            <!-- Early warning -->
+            <svg v-else viewBox="0 0 560 360" class="h-full w-full">
+              <rect width="560" height="360" fill="#012028" />
+              <path d="M70 270 L490 270" stroke="rgba(252,248,248,0.13)" stroke-width="14" stroke-linecap="round"/>
+              <path d="M160 270 Q220 230 280 270 T400 270" fill="none" stroke="rgba(252,248,248,0.10)" stroke-width="8"/>
+              <path d="M280 120 L230 235 L330 235 Z" fill="rgba(0,86,23,0.18)" stroke="rgba(0,86,23,0.55)" stroke-width="6"/>
+              <path class="signal" d="M280 155 L280 205" stroke="rgba(252,248,248,0.55)" stroke-width="10" stroke-linecap="round"/>
+              <circle class="signal" cx="280" cy="225" r="8" fill="rgba(252,248,248,0.55)"/>
+            </svg>
           </div>
 
-          <div class="mt-6 flex items-center gap-3">
-            <NuxtLink
-            :to="localePath(p.href)"
-            class="rounded-md px-4 py-2 text-sm font-medium"
-            style="background: var(--bg-card-hover); color: var(--font-primary);"
-            :aria-label="`View details for ${p.title}`"
-            >
-            View details
-          </NuxtLink>
+          <!-- Subtle overlay to keep it “muted” by default -->
+          <div class="absolute inset-0 product-overlay" />
+        </div>
 
-            <a href="#contact" class="text-sm" style="color: rgba(252,248,248,0.75);">
-              Discuss a pilot →
-            </a>
+        <!-- TEXT -->
+        <div class="p-5">
+          <div class="text-base font-semibold" style="color: var(--font-primary);">
+            {{ p.title }}
+          </div>
+          <div class="mt-2 text-sm" style="color: rgba(252,248,248,0.75);">
+            {{ p.insight }}
+          </div>
+
+          <!-- View details (appears on hover) -->
+          <div class="mt-4 text-sm product-cta" style="color: rgba(252,248,248,0.85);">
+            View details →
           </div>
         </div>
-      </div>
-      </div>
-    </section>
+      </NuxtLink>
+    </div>
+  </div>
+</section>
 
     <!-- SECTION 5: Impact -->
     <section id="impact" class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16 " style="border-top: 1px solid var(--border-muted); padding-top: 64px;">
