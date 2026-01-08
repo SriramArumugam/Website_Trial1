@@ -246,41 +246,258 @@ const products = [
 </section>
 
 
-    <!-- SECTION 3: How it works -->
-    <section id="how" class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16 " style="border-top: 1px solid var(--border-muted); padding-top: 64px;">
-    <div class="w-full">
-      <h2 class="text-2xl font-semibold sm:text-3xl" style="color: var(--font-primary);">How it works</h2>
-      <p class="mt-3 max-w-2xl" style="color: var(--font-muted);">
-        A simple end-to-end flow that turns satellite signals into actionable road intelligence.
-      </p>
+    <!-- SECTION 3: How it works (visual flow) -->
+<section id="how" class="relative min-h-screen flex items-center" style="border-top: 1px solid var(--border-muted);">
+  <div class="mx-auto w-full max-w-6xl px-5 py-20">
 
-      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="rounded-xl p-5" style="background: var(--bg-secondary); border: 1px solid var(--border-primary);">
-          <div class="text-sm" style="color: rgba(252,248,248,0.6);">Step 1</div>
-          <div class="mt-2 text-lg font-semibold" style="color: var(--font-primary);">Data capture</div>
-          <div class="mt-2 text-sm" style="color: var(--font-muted);">Frequent satellite observations over your network.</div>
-        </div>
+    <!-- Left headline -->
+    <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
+      <div>
+        <p class="text-sm tracking-wide" style="color: rgba(252,248,248,0.6);">
+          From satellite signal to road intelligence
+        </p>
 
-        <div class="rounded-xl p-5" style="background: var(--bg-secondary); border: 1px solid var(--border-primary);">
-          <div class="text-sm" style="color: rgba(252,248,248,0.6);">Step 2</div>
-          <div class="mt-2 text-lg font-semibold" style="color: var(--font-primary);">Signal processing</div>
-          <div class="mt-2 text-sm" style="color: var(--font-muted);">Extract stable indicators from the imagery.</div>
-        </div>
+        <h2 class="mt-3 text-3xl font-semibold sm:text-4xl" style="color: var(--font-primary);">
+          A simple end-to-end flow that turns satellite signals into actionable road intelligence.
+        </h2>
 
-        <div class="rounded-xl p-5" style="background: var(--bg-secondary); border: 1px solid var(--border-primary);">
-          <div class="text-sm" style="color: rgba(252,248,248,0.6);">Step 3</div>
-          <div class="mt-2 text-lg font-semibold" style="color: var(--font-primary);">AI interpretation</div>
-          <div class="mt-2 text-sm" style="color: var(--font-muted);">Translate patterns into condition insights.</div>
-        </div>
-
-        <div class="rounded-xl p-5" style="background: var(--bg-secondary); border: 1px solid var(--border-primary);">
-          <div class="text-sm" style="color: rgba(252,248,248,0.6);">Step 4</div>
-          <div class="mt-2 text-lg font-semibold" style="color: var(--font-primary);">Insight delivery</div>
-          <div class="mt-2 text-sm" style="color: var(--font-muted);">Dashboards + exports for planning and action.</div>
-        </div>
+        <p class="mt-4 max-w-xl" style="color: var(--font-muted);">
+          Designed to be calm, visual, and non-distracting — with subtle motion and hover explanations.
+        </p>
       </div>
+
+      <!-- Right visual cards -->
+      <div class="grid gap-4 sm:grid-cols-2">
+
+        <!-- STEP 1 -->
+        <div class="group rounded-2xl p-5 relative overflow-hidden"
+             style="background: var(--bg-secondary); border: 1px solid var(--border-primary);">
+          <div class="text-xs" style="color: rgba(252,248,248,0.6);">Step 1</div>
+          <div class="mt-1 text-lg font-semibold" style="color: var(--font-primary);">Data capture (Orbit)</div>
+
+          <!-- Illustration box -->
+          <div class="mt-4 rounded-xl relative h-36 overflow-hidden"
+               style="background:#001217; border:1px solid rgba(252,248,248,0.10);">
+            <!-- Earth curve -->
+            <div class="absolute left-[-20%] bottom-[-40%] w-[140%] h-[120%] rounded-[999px]"
+                 style="border: 1px solid rgba(252,248,248,0.10);"></div>
+
+            <!-- Satellite -->
+            <div class="absolute left-5 top-5 flex items-center gap-2">
+              <div class="h-4 w-6 rounded-sm" style="background: rgba(252,248,248,0.18);"></div>
+              <div class="h-1 w-5" style="background: rgba(252,248,248,0.18);"></div>
+            </div>
+
+            <!-- Scan arc (on hover) -->
+            <div class="absolute left-4 top-6 w-24 h-24 rounded-full opacity-0 group-hover:opacity-100 transition"
+                 style="border: 1px solid rgba(32, 80, 76, 0.45); filter: blur(0.2px);"></div>
+
+            <!-- Slow falling dots -->
+            <div class="dot dot1"></div>
+            <div class="dot dot2"></div>
+            <div class="dot dot3"></div>
+          </div>
+
+          <!-- Tooltip -->
+          <div class="mt-3 text-sm opacity-0 group-hover:opacity-100 transition"
+               style="color: rgba(252,248,248,0.75);">
+            Consistent, network-wide observation
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="group rounded-2xl p-5 relative overflow-hidden"
+             style="background: var(--bg-secondary); border: 1px solid var(--border-primary);">
+          <div class="text-xs" style="color: rgba(252,248,248,0.6);">Step 2</div>
+          <div class="mt-1 text-lg font-semibold" style="color: var(--font-primary);">Signal processing (Filtering)</div>
+
+          <div class="mt-4 rounded-xl relative h-36 overflow-hidden"
+               style="background:#001217; border:1px solid rgba(252,248,248,0.10);">
+
+            <!-- Grid -->
+            <div class="absolute inset-0 grid-layer"></div>
+            <div class="absolute inset-0 grid-layer bright"></div>
+
+            <!-- Dots passing through -->
+            <div class="filter-dot fd1"></div>
+            <div class="filter-dot fd2"></div>
+            <div class="filter-dot fd3"></div>
+            <div class="filter-dot fd4"></div>
+          </div>
+
+          <div class="mt-3 text-sm opacity-0 group-hover:opacity-100 transition"
+               style="color: rgba(252,248,248,0.75);">
+            Noise reduced. Stable indicators retained.
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="group rounded-2xl p-5 relative overflow-hidden"
+             style="background: var(--bg-secondary); border: 1px solid var(--border-primary);">
+          <div class="text-xs" style="color: rgba(252,248,248,0.6);">Step 3</div>
+          <div class="mt-1 text-lg font-semibold" style="color: var(--font-primary);">AI interpretation</div>
+
+          <div class="mt-4 rounded-xl relative h-36 overflow-hidden"
+               style="background:#001217; border:1px solid rgba(252,248,248,0.10);">
+
+            <!-- Abstract node form -->
+            <div class="absolute left-6 top-6 node n1"></div>
+            <div class="absolute left-16 top-14 node n2"></div>
+            <div class="absolute left-28 top-8 node n3"></div>
+            <div class="absolute left-36 top-18 node n4"></div>
+            <div class="absolute left-22 top-26 node n5"></div>
+
+            <!-- Connections -->
+            <div class="absolute left-10 top-12 link l1"></div>
+            <div class="absolute left-18 top-18 link l2"></div>
+            <div class="absolute left-30 top-12 link l3"></div>
+            <div class="absolute left-26 top-24 link l4"></div>
+          </div>
+
+          <div class="mt-3 text-sm opacity-0 group-hover:opacity-100 transition"
+               style="color: rgba(252,248,248,0.75);">
+            Patterns translated into condition intelligence.
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="group rounded-2xl p-5 relative overflow-hidden"
+             style="background: var(--bg-secondary); border: 1px solid var(--border-primary);">
+          <div class="text-xs" style="color: rgba(252,248,248,0.6);">Step 4</div>
+          <div class="mt-1 text-lg font-semibold" style="color: var(--font-primary);">Insight delivery</div>
+
+          <div class="mt-4 rounded-xl relative h-36 overflow-hidden"
+               style="background:#001217; border:1px solid rgba(252,248,248,0.10);">
+
+            <!-- Road lines -->
+            <div class="absolute left-6 top-10 h-1 w-[75%] rounded-full road"></div>
+            <div class="absolute left-10 top-18 h-1 w-[65%] rounded-full road"></div>
+            <div class="absolute left-8 top-26 h-1 w-[80%] rounded-full road"></div>
+
+            <!-- Highlight segment on hover -->
+            <div class="absolute left-28 top-18 h-1 w-24 rounded-full segment"></div>
+
+            <!-- Tiny dashboard icon -->
+            <div class="absolute right-4 bottom-4 h-8 w-10 rounded-lg dash"></div>
+            <div class="absolute right-6 bottom-6 h-1 w-6 rounded" style="background: rgba(252,248,248,0.12);"></div>
+            <div class="absolute right-6 bottom-4 h-1 w-4 rounded" style="background: rgba(252,248,248,0.10);"></div>
+          </div>
+
+          <div class="mt-3 text-sm opacity-0 group-hover:opacity-100 transition"
+               style="color: rgba(252,248,248,0.75);">
+            Action-ready insights for planning & prioritization.
+          </div>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
+<!-- Add these styles at the bottom of Home.vue (or in your global css) -->
+<style scoped>
+/* Step 1: slow dots */
+.dot{
+  position:absolute;
+  width:10px; height:10px;
+  border-radius:999px;
+  background: rgba(252,248,248,0.70);
+  top:-12px;
+  animation: fall 7s linear infinite;
+  opacity: 0.9;
+}
+.dot1{ left: 40%; animation-delay: 0s; }
+.dot2{ left: 55%; animation-delay: 2.3s; opacity: 0.65; }
+.dot3{ left: 70%; animation-delay: 4.6s; opacity: 0.55; }
+
+@keyframes fall{
+  0%{ transform: translateY(0); }
+  100%{ transform: translateY(165px); }
+}
+
+/* Step 2: grid + filtering */
+.grid-layer{
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(252,248,248,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(252,248,248,0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+  opacity: 0.55;
+}
+.grid-layer.bright{
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+.group:hover .grid-layer.bright{
+  opacity: 0.35;
+}
+
+.filter-dot{
+  position:absolute;
+  width:10px; height:10px;
+  border-radius:999px;
+  background: rgba(252,248,248,0.65);
+  animation: filterMove 6.8s ease-in-out infinite;
+}
+.fd1{ left: 20%; top: 12%; animation-delay: 0s; }
+.fd2{ left: 42%; top: 18%; animation-delay: 1.7s; opacity: 0.55; }
+.fd3{ left: 58%; top: 10%; animation-delay: 3.4s; opacity: 0.45; }
+.fd4{ left: 75%; top: 16%; animation-delay: 5.1s; opacity: 0.35; }
+
+@keyframes filterMove{
+  0%{ transform: translateY(0) scale(1); filter: blur(0px); opacity: 0.55; }
+  55%{ transform: translateY(65px) scale(0.92); filter: blur(0.3px); opacity: 0.35; }
+  100%{ transform: translateY(140px) scale(0.88); filter: blur(0.2px); opacity: 0.25; }
+}
+
+/* Step 3: abstract nodes (muted teal only) */
+.node{
+  width: 10px; height: 10px; border-radius: 999px;
+  background: rgba(252,248,248,0.22);
+  border: 1px solid rgba(252,248,248,0.12);
+}
+.link{
+  height: 2px;
+  background: rgba(252,248,248,0.10);
+  border-radius: 999px;
+  transform-origin: left center;
+}
+.l1{ width: 90px; transform: rotate(12deg); }
+.l2{ width: 80px; transform: rotate(-8deg); }
+.l3{ width: 70px; transform: rotate(18deg); }
+.l4{ width: 95px; transform: rotate(-14deg); }
+
+.group:hover .node{
+  animation: nodePulse 0.9s ease-in-out 1;
+  border-color: rgba(32,80,76,0.55);
+}
+@keyframes nodePulse{
+  0%{ background: rgba(252,248,248,0.20); }
+  45%{ background: rgba(32,80,76,0.35); }
+  100%{ background: rgba(252,248,248,0.20); }
+}
+
+/* Step 4: road + subtle highlight */
+.road{
+  background: rgba(252,248,248,0.10);
+}
+.segment{
+  background: rgba(32,80,76,0.20);
+  border: 1px solid rgba(32,80,76,0.35);
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+.group:hover .segment{
+  opacity: 1;
+}
+
+.dash{
+  border: 1px solid rgba(252,248,248,0.10);
+  background: rgba(252,248,248,0.04);
+}
+</style>
+
 
     <!-- SECTION 4: Products -->
     <section id="products" class="mx-auto max-w-6xl px-5 min-h-screen flex items-center py-16" style="border-top: 1px solid var(--border-muted); padding-top: 64px;">
